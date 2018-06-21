@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib import style
+import numpy as np
 style.use('ggplot')
 web_stats = {'Day': [1,2,3,4,5,6],
              'Visitors': [43,53,34,45,64,34],
@@ -17,3 +18,17 @@ df = pd.DataFrame(web_stats)
 #to select a particular column
 #print(df['Visitors'])
 #print(df.Visitors)
+
+#printing out select columns
+#print(df[['Bounce_Rate','Visitors']])
+
+#printing out a column in a list
+#print(df.Visitors.tolist())
+
+# #converting columns to an array
+# print(np.array(df[['Bounce_Rate','Visitors']]))
+#print(np.array(df['Bounce_Rate']))
+
+
+df3 = pd.DataFrame(np.array(df[['Bounce_Rate','Visitors']]))
+print(df3)
